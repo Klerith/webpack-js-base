@@ -1,34 +1,18 @@
-import './assets/styles/style.css';
-import { txtInput, mostrarTodo } from './components/componentes.js'
-
+import { construirTodos } from './components/componentes.js'
 import { TodoList } from './classes/todo-list.class';
-import { Todo } from './classes/todo.class';
+
+import './assets/styles/style.css';
+
+export const todoList = new TodoList();
+construirTodos( todoList.todos );
+// const nuevoTodo = new Todo('Aprender JavaScript');
+// todoList.todos.push( nuevoTodo )
+
+// console.log( todoList.todos );
+
+// mostrarTodo( nuevoTodo );
 
 
-const todoList = new TodoList();
-const nuevoTodo = new Todo('Aprender JavaScript');
-todoList.todos.push( nuevoTodo )
-
-
-console.log( todoList.todos );
-
-mostrarTodo( nuevoTodo );
-mostrarTodo( nuevoTodo );
-mostrarTodo( nuevoTodo );
-mostrarTodo( nuevoTodo );
-
-// Eventos
-txtInput.addEventListener('keyup', (event) => {
-
-    // console.log(txtInput.value);
-    if( event.keyCode === 13 && txtInput.value.length > 0 ) {
-        // Crear Todo
-        const nuevoTodo = new Todo( txtInput.value );
-        todoList.todos.push( nuevoTodo );
-        console.log( todoList );
-    }
-
-});
 
 
 
